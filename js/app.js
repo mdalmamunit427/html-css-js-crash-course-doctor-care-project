@@ -9,7 +9,7 @@ const mobileMenuLinks = document.querySelectorAll('#mobile-menu a[href^="#"]');
 
 document.addEventListener('DOMContentLoaded', () => {
    
-    setDefaultActiveLink();
+    // setDefaultActiveLink();
     handleScroll();
     window.addEventListener('scroll', handleScroll);
 
@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function setActiveLink(sections, navLinks) {
     let index = sections.length;
+
+    console.log(index)
 
     while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
 
