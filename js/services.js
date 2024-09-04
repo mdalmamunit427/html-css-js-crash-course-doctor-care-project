@@ -50,8 +50,3 @@ function generateServiceHTML(service) {
 const serviceContainer = document.getElementById('service-container');
 serviceContainer.innerHTML = services.map(generateServiceHTML).join('');
 
-// Function to toggle description visibility
-function toggleDescription(id) {
-    const description = document.getElementById(`desc-${id}`);
-    description.classList.toggle('hidden');
-}
