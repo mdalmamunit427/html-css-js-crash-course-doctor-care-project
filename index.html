@@ -2,8 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="./images/fav-icon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DoctorCare | HTML, Tailwind CSS, JavaScript Landing Page</title>
+
+        <!-- gogle fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+          rel="stylesheet"
+        />
 
     <!-- tailwind css link -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,12 +21,16 @@
         theme: {
           extend: {
             colors: {
-              clifford: "#da373d",
-              primary: "#00856F",
-              headline: "#212529",
-              secondary: "#495057",
+              "primary": "#00856F",
+              "green-light": "#DCE9E2",
+              "green-light-02": "#F7F9F9",
               "brand-beige": "#FFFAF1",
-              "light-color": "#F7F9F9",
+              "brand-green-hover": "#00453A",
+              "secondary": "#495057",
+
+            },
+            fontFamily: {
+              primary: ["DM Sans", "sans-serif"],
             },
           },
         },
@@ -37,8 +50,11 @@
         font-weight: bold;
       }
     </style>
+
+    <!-- custom css -->
+     <!-- <link rel="stylesheet" href="css/styles.css"> -->
   </head>
-  <body class="bg-light-color overflow-x-hidden">
+  <body class="bg-green-light-02 overflow-x-hidden font-primary">
     <!-- header section -->
     <header
       id="header"
@@ -87,13 +103,13 @@
 
       <!-- Mobile Menu Items -->
       <div id="mobile-menu" class="navbar-menu relative z-50 hidden">
-        <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+        <div class="navbar-backdrop fixed inset-0 bg-primary opacity-25"></div>
         <nav
-          class="fixed top-0 left-0 bottom-0 flex flex-col w-full max-w-sm py-6 px-6 text-primary bg-white border-r overflow-y-auto"
+          class="fixed top-0 left-0 bottom-0 flex flex-col w-full max-w-sm py-6 px-6 text-primary bg-primary border-r overflow-y-auto"
         >
           <div class="flex items-center mb-8">
-            <a href="/" class="text-black mr-auto text-2xl font-bold leading-none"
-            >Doctor<span class="text-primary">Care</span></a
+            <a href="/" class="text-white mr-auto text-xl font-semibold leading-none"
+            >Doctor<span class="text-white">Care</span></a
           >
             <button id="mobile-menu-close" class="navbar-close">
               <img src="./images/close-menu-icon.svg" alt="" class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500">
@@ -103,28 +119,28 @@
             <ul>
               <li class="mb-1">
                 <a
-                  class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-primary rounded"
+                  class="block p-4 text-sm font-semibold text-white hover:bg-blue-50 hover:text-primary rounded"
                   href="#home"
                   >Início</a
                 >
               </li>
               <li class="mb-1">
                 <a
-                  class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-primary rounded"
+                  class="block p-4 text-sm font-semibold text-white hover:bg-blue-50 hover:text-primary rounded"
                   href="#about"
                   >Sobre</a
                 >
               </li>
               <li class="mb-1">
                 <a
-                  class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-primary rounded"
+                  class="block p-4 text-sm font-semibold text-white hover:bg-blue-50 hover:text-primary rounded"
                   href="#services"
                   >Serviços</a
                 >
               </li>
               <li class="mb-1">
                 <a
-                  class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-primary rounded"
+                  class="block p-4 text-sm font-semibold text-white hover:bg-blue-50 hover:text-primary rounded"
                   href="#contact"
                   >Depoimentos</a
                 >
@@ -139,7 +155,7 @@
                 >Agendar consulta</a
               >
             </div>
-            <p class="my-4 text-xs text-center text-gray-400">
+            <p class="my-4 text-xs text-center text-white">
               <span>Copyright © 2025</span>
             </p>
           </div>
@@ -157,7 +173,7 @@
       >
         <!-- Text Content -->
         <div
-          class="w-full md:w-2/3 text-center md:text-left mb-8 md:mb-0 hero-content"
+          class="w-full md:w-2/3 text-center sm:text-left mb-8 hero-content"
         >
           <h2 class="text-sm text-primary font-semibold mb-4">
             BOAS-VINDAS A DOCTORCARE 👋
@@ -169,12 +185,14 @@
             Os médicos da DoctorCare vão além dos sintomas para tratar a causa
             raiz de sua doença e proporcionar uma cura a longo prazo.
           </p>
-          <a
-            href="#"
-            class="bg-primary text-white px-6 py-3 rounded-md text-lg hover:bg-primary-dark transition"
-          >
-            Agende sua consulta
-          </a>
+          <div class="text-center">
+            <button
+              class="bg-primary text-white px-6 py-3 rounded-full text-lg hover:bg-brand-green-hover flex w-full sm:w-72 items-center justify-center gap-1"
+            >
+              <i class="ri-whatsapp-line"></i>
+              <a href="#contact">Agende sua consulta</a>
+            </button>
+          </div>
         </div>
 
         <!-- Image -->
@@ -192,7 +210,7 @@
 
     <!-- stats secton -->
     <section
-      class="md:h-52 max-w-7xl container mx-auto -mt-28 bg-brand-beige rounded-lg shadow-lg stats-section"
+      class="md:h-52 max-w-7xl container mx-auto sm:-mt-28 mt-2 bg-brand-beige rounded-lg shadow-lg stats-section"
     >
       <div
         class="p-8 pt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 items-center justify-center"
@@ -316,7 +334,7 @@
     <!-- footer section -->
     <footer class="bg-primary text-white py-6">
       <div
-        class="max-w-7xl py-6 container mx-auto px-4 flex flex-col md:flex-row items-center justify-between"
+        class="max-w-7xl py-6 container mx-auto px-4 flex flex-col md:flex-row items-center justify-between footer-container"
       >
         <!-- Left Side: Logo and Copyright -->
         <div class="flex items-center">
